@@ -1,0 +1,45 @@
+while True:
+    
+    A = float(input("Enter a 1st number: "))
+    X = input("Enter a Mathmatic symbol(+,-,*,/): ")
+    B = float(input("Enter a 2nd number: "))
+
+    print('='*50,"\n")
+
+    OriginalReturn = eval("A"+X+"B")
+
+    print(  "Original Return: " , OriginalReturn)      
+
+
+    def calc(num1,symbol,num2) :
+
+
+        len1 = len(str(num1))
+        len2 = len(str(num2))
+
+        if len1 > len2:
+            length = 10**len1
+        else:
+            length = 10**len2
+
+        lenNUM1 = num1 * length
+        lenNUM2 = num2 * length
+
+        calcVALUE = eval("lenNUM1" + symbol + "lenNUM2")/length
+
+        if symbol == '*':
+            calcVALUE = calcVALUE / length
+        elif symbol == '/':
+            calcVALUE = calcVALUE * length
+
+
+
+        return calcVALUE
+
+
+    CalcValue = calc(A,X,B)     # =CalcVALUE
+
+    FloatingPointInaccuracy = abs(CalcValue -OriginalReturn)
+
+    print("REAL value is'" , CalcValue , "'\nFloating-point inaccuracy was " , FloatingPointInaccuracy ,"\n"*5)
+
