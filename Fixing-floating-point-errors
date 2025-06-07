@@ -5,8 +5,13 @@ while True:
     B = float(input("Enter a 2nd number: "))
 
     if X not in ['+','-','*','/']:
-        print("Invalid symbol. Please enter +, -, *, or /.")
+        print("Invalid symbol. Please enter +, -, *, or /.\n")
         continue
+
+    if X == '/' and B == 0:
+        print("Cannot divide by zero.\n")
+        continue
+
 
     print('='*50,"\n")
 
