@@ -4,6 +4,10 @@ while True:
     X = input("Enter a Mathmatic symbol(+,-,*,/): ")
     B = float(input("Enter a 2nd number: "))
 
+    if X not in ['+','-','*','/']:
+        print("Invalid symbol. Please enter +, -, *, or /.")
+        continue
+
     print('='*50,"\n")
 
     OriginalReturn = eval("A"+X+"B")
